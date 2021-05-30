@@ -1,0 +1,12 @@
+<header>
+  <nav class ="navbar ml-auto navbar-dark bg-dark">
+    <div><a href="https://api.acme-corp.com" class="navbar-brand">ACME Limited</a></div>
+    <ul class="navbar-nav">
+      <!-- <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/" class="nav-link">View Tokens</a></li> -->
+      <!-- <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li> -->
+      <li><a  class="btn btn-secondary"   role="button"
+        *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">LogOut</a></li>
+    </ul>
+    </nav>
+   
+</header>

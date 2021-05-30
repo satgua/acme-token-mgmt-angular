@@ -1,0 +1,16 @@
+body {
+    min-height: 75rem;
+    padding-top: 4.5rem;
+  
+    font-family: 'Alegreya Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+.f-contact p {
+    font-size: 14px;
+    color: #8a8d94;
+    margin: 0;
+    
+    font-weight: 300;
+    margin-bottom: 15px;
+  }

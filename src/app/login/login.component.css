@@ -1,0 +1,9 @@
+p#err {
+    color: red;
+    padding: 1em;
+  }
+
+.alert{
+    color: red;
+    padding: 1em;  
+}

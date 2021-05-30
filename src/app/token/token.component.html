@@ -1,0 +1,50 @@
+<div class="col-md-6 offset-md-3" >
+  <div class="text-center">
+    <h3>Tokens</h3>
+    <div class="main">  
+        <!-- Actual search box -->
+      <!-- <div class="form-group has-search">
+        <span class="fa fa-search form-control-feedback"></span>
+        <input type="text" class="form-control" placeholder="Search" name="tokenSearch"
+        [(ngModel)]="tokenSearch" (keyup.enter)="searchTokens(tokenSearch)">
+      </div> -->
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search token" name="tokenSearch"
+         [(ngModel)]="tokenSearch" (keyup.enter)="searchTokens(tokenSearch)">
+        <div class="input-group-append">
+          <button class="btn btn-secondary" type="button" (click)="clearSearch()">
+            <i class="fa fa-times-circle"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+<hr>
+
+  </div>    
+    <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Token</th>
+      <th>Validity</th>
+      <th><button class="btn btn-secondary btn-sm" data-toggle="button" (click)="genToken()">New Token</button></th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let token of tokens" [ngStyle]="{'color': isExpired(token) ? 'red' : 'green'}">
+            <td>{{token.apiToken}}</td>
+            <td>{{token.validTo}}</td>
+            <td *ngIf="isExpired(token)">
+              <button [ngClass]=" isExpired(token)
+              ? 'btn btn-success btn-sm'
+              : 'btn btn-warning btn-sm' " (click)="updateToken(token,1)"> Enable</button>
+            </td>
+            <td *ngIf="!isExpired(token)">
+              <button [ngClass]=" isExpired(token)
+              ? 'btn btn-success btn-sm'
+              : 'btn btn-warning btn-sm' " (click)="updateToken(token,0)"> Disable</button>
+            </td>
+            </tr>
+    </tbody>
+      </table>
+  
+    </div>
